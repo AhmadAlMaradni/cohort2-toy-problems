@@ -9,6 +9,7 @@ var powerOfTwo = function(num){
     x = x.toString()
     x= x.split('')
     var sum = 0;
+    
     // var n = Number.MAX_VALUE.toString();
     // var parts = n.split("e+");
     // var first = parts[0].replace('.', "");
