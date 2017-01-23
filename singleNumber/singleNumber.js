@@ -34,7 +34,7 @@ var nums = [2, 7, 11, 15], target = 9,
 twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
-function twoSum(nums, target){
+function twoSum(nums, target){        // O(n^2)
   var newArr = []
   for (var i = 0; i < nums.length; i++) {
       for (var j = 0; j < nums.length; j++) {
@@ -57,5 +57,17 @@ countAllNumbers(2); //should return 91 because there are 91 numbers that have un
 */
 
 function countAllNumbers(n){
+	// i see the algorith online and i have single proplem just need time to fegure out
 
+    var ans = 10
+    var base =10
+      if(n===0){
+        return 1
+      }
+
+      for (var i = 2; i <= n && i <=10; i++) {
+        base *= 9 - i + 2
+        ans+=base
+      }
+      return ans
 };
