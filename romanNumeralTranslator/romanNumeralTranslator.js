@@ -26,4 +26,20 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+  var romanNumeral = romanNumeral.split('');
+  var sum = 0;
+	
+  for(var i = 0; i < romanNumeral.length; i++){
+
+    if(DIGIT_VALUES[romanNumeral[i]] < DIGIT_VALUES[romanNumeral[i+1]])
+    {
+      sum += DIGIT_VALUES[romanNumeral[i+1]] - DIGIT_VALUES[romanNumeral[i]];
+      i++;
+    }
+    else
+    {
+      sum += DIGIT_VALUES[romanNumeral[i]];
+    }
+  }
+	return sum > 0 ? sum : null
 }
