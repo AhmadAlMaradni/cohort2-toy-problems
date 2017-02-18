@@ -22,6 +22,7 @@
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
 
+
 Array.prototype.isSubsetOf = function (arr) {   // O(n^2) --> for , includes
 	arr = JSON.stringify(arr)
 	that = JSON.stringify(this)
@@ -31,5 +32,4 @@ for (var i = 0; i < that.length; i++) {
 			return false
 		}
 	}
-	return true
 }
