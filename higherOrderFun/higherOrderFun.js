@@ -12,8 +12,17 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
+  
+  var newArr = []
+    this.forEach(function(element, key) {
+      newArr[key] = callback(element, key);
+    });
+    return newArr;
 
 }
+
+
+
 
 /*
 Example usage:
@@ -39,6 +48,12 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
+  var sum = a + b ;
+  if(isNaN(sum)){
+    return callback('ncorrect argument(s)', sum)
+  }else {
+    return callback(false, sum)
+  }
 
 };
 
@@ -64,7 +79,8 @@ asyncSum(10,"B",logNumber);//should print "Error: Incorrect argument(s)" after 1
 Problem 3 (ADVANCED):
 
 What kind of candy do you like?
-Your answer: 
+Your answer: RBK :) :P
+
 
 */
 
